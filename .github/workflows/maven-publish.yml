@@ -3,8 +3,14 @@
 
 name: Maven Package
 
-on: push
-
+on:
+  push:
+    branches:    
+      - '!release1'         # matches every branch that doesn't contain a '/'
+      - '!release2'       # matches every branch containing a single '/'
+      - '!release3'        # matches every branch
+         # excludes master
+  
 
 jobs:
   build:
